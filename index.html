@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy | BUTS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --accent-primary: #4f46e5;
+        --accent-primary-hover: #4338ca;
+        --accent-secondary: #7c3aed;
+        --border-color: #f1f5f9;
+        --border-darker: #e2e8f0;
+        --highlight-bg: #f8fafc;
+        --radius: 16px;
+        --radius-sm: 8px;
+        --font-headings: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+        --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+        --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.04), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+        --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.03), 0 8px 10px -6px rgb(0 0 0 / 0.03);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        line-height: 1.75;
+        color: var(--text-main);
+        background-color: var(--bg-color);
+        background-image: 
+          radial-gradient(#e2e8f0 1px, transparent 1px), 
+          radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-position: 0 0, 20px 20px;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* Scroll progress indicator */
+      .scroll-progress-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+        z-index: 1000;
+      }
+
+      .scroll-progress-bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+        border-radius: 0 2px 2px 0;
+        transition: width 0.1s ease-out;
+      }
+
+      /* Layout Structure */
+      .page-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 48px;
+        padding: 60px 24px;
+        position: relative;
+      }
+
+      /* Sidebar Navigation */
+      .sidebar-wrapper {
+        position: sticky;
+        top: 40px;
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .sidebar {
+        background: var(--card-bg);
+        padding: 32px 24px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        overflow-y: auto;
+        box-shadow: var(--shadow-lg);
+        height: 100%;
+        position: relative;
+      }
+
+      .sidebar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .sidebar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .sidebar::-webkit-scrollbar-thumb {
+        background-color: var(--border-darker);
+        border-radius: 20px;
+      }
+
+      .sidebar h4 {
+        font-family: var(--font-headings);
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        margin-bottom: 24px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .sidebar h4::before {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: var(--accent-primary);
+        border-radius: 50%;
+      }
+
+      .toc-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .toc-list li {
+        margin: 0;
+      }
+
+      .toc-list a {
+        display: block;
+        padding: 10px 14px;
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        font-weight: 500;
+        line-height: 1.4;
+        border-radius: var(--radius-sm);
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        border-left: 2px solid transparent;
+      }
+
+      .toc-list a:hover {
+        color: var(--accent-primary);
+        background-color: var(--highlight-bg);
+        padding-left: 18px;
+      }
+
+      .toc-list li.active a {
+        color: var(--accent-primary);
+        background: linear-gradient(90deg, rgba(79, 70, 229, 0.06) 0%, rgba(124, 58, 237, 0.02) 100%);
+        border-left-color: var(--accent-primary);
+        font-weight: 600;
+        padding-left: 18px;
+      }
+
+      /* Main Content Panel */
+      .main-content {
+        background: var(--card-bg);
+        padding: 56px 64px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .doc-header {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 32px;
+        margin-bottom: 40px;
+        position: relative;
+      }
+
+      .doc-header::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 80px;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+      }
+
+      .doc-title {
+        font-family: var(--font-headings);
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: var(--text-main);
+        margin-bottom: 12px;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        background: linear-gradient(135deg, #0f172a 0%, #3b82f6 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .doc-meta {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .doc-meta::before {
+        content: "📅";
+        font-size: 1rem;
+      }
+
+      .section-heading {
+        font-family: var(--font-headings);
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-top: 48px;
+        margin-bottom: 16px;
+        padding-top: 24px;
+        scroll-margin-top: 40px;
+        border-top: 1px solid var(--border-color);
+      }
+
+      .sub-heading {
+        font-family: var(--font-headings);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #1e293b;
+        margin-top: 28px;
+        margin-bottom: 12px;
+      }
+
+      p {
+        margin-bottom: 1.6em;
+        text-align: justify;
+        font-size: 1rem;
+        color: #334155;
+      }
+
+      p strong {
+        color: var(--text-main);
+      }
+
+      .alert-block {
+        background: linear-gradient(135deg, rgba(79, 70, 229, 0.02) 0%, rgba(124, 58, 237, 0.02) 100%);
+        border-left: 4px solid var(--accent-primary);
+        border-right: 1px solid var(--border-color);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 24px;
+        margin: 32px 0;
+        border-radius: 8px;
+        font-size: 0.975rem;
+        line-height: 1.7;
+        box-shadow: var(--shadow-sm);
+      }
+
+      ul {
+        margin-bottom: 1.6em;
+        padding-left: 24px;
+        list-style-type: none;
+      }
+
+      ul li {
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 1rem;
+        color: #334155;
+        padding-left: 18px;
+      }
+
+      ul li::before {
+        content: "•";
+        color: var(--accent-primary);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-left: -1em;
+        position: absolute;
+        left: 8px;
+      }
+
+      ul li strong {
+        color: var(--text-main);
+      }
+
+      .section-gap {
+        height: 1px;
+        background: var(--border-color);
+        margin: 48px 0;
+      }
+
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 48px;
+        height: 48px;
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        box-shadow: var(--shadow-lg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+        opacity: 0;
+        visibility: hidden;
+        z-index: 99;
+        color: var(--accent-primary);
+      }
+
+      .back-to-top.show {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-xl);
+        background-color: var(--accent-primary);
+        color: #fff;
+        border-color: var(--accent-primary);
+      }
+
+      @media (max-width: 1024px) {
+        .page-wrapper {
+          grid-template-columns: 280px 1fr;
+          gap: 32px;
+          padding: 40px 16px;
+        }
+        .main-content {
+          padding: 40px 48px;
+        }
+      }
+
+      @media (max-width: 968px) {
+        .page-wrapper {
+          grid-template-columns: 1fr;
+          padding: 20px 16px;
+        }
+        .sidebar-wrapper {
+          height: auto;
+          position: relative;
+          top: 0;
+        }
+        .sidebar {
+          padding: 24px;
+        }
+        .sidebar h4 {
+          margin-bottom: 16px;
+        }
+        .main-content {
+          padding: 32px 24px;
+        }
+        .toc-list {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 8px;
+        }
+        .toc-list a {
+          padding: 8px 12px;
+          border-left: none;
+          border-bottom: 2px solid transparent;
+        }
+        .toc-list li.active a {
+          border-left-color: transparent;
+          border-bottom-color: var(--accent-primary);
+          background: var(--highlight-bg);
+        }
+        .back-to-top {
+          bottom: 20px;
+          right: 20px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .doc-title {
+          font-size: 1.75rem;
+        }
+        .main-content {
+          padding: 24px 16px;
+        }
+        .toc-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar" id="scrollProgress"></div>
+    </div>
+
+    <div class="page-wrapper">
+      <!-- Left-hand Navigation Menu Box -->
+      <div class="sidebar-wrapper">
+        <aside class="sidebar">
+          <h4>Table of Contents</h4>
+          <ul class="toc-list">
+            <li><a href="#sec1">1. WHAT INFORMATION DO WE COLLECT?</a></li>
+            <li><a href="#sec2">2. HOW DO WE PROCESS YOUR INFORMATION?</a></li>
+            <li><a href="#sec3">3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?</a></li>
+            <li><a href="#sec4">4. HOW LONG DO WE KEEP YOUR INFORMATION?</a></li>
+            <li><a href="#sec5">5. HOW DO WE KEEP YOUR INFORMATION SAFE?</a></li>
+            <li><a href="#sec6">6. DO WE COLLECT INFORMATION FROM MINORS?</a></li>
+            <li><a href="#sec7">7. WHAT ARE YOUR PRIVACY RIGHTS?</a></li>
+            <li><a href="#sec8">8. CONTROLS FOR DO-NOT-TRACK FEATURES</a></li>
+            <li><a href="#sec9">9. DO WE MAKE UPDATES TO THIS NOTICE?</a></li>
+            <li><a href="#sec10">10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?</a></li>
+            <li>
+              <a href="#sec11">11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
+              YOU?</a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- Main Content Presentation Layout -->
+      <main class="main-content">
+        <div class="doc-header">
+          <div class="doc-title">PRIVACY POLICY</div>
+          <div class="doc-meta">Last updated June 17, 2026</div>
+        </div>
+
+        <p>
+          This Privacy Notice for Bangladesh Unique Technology Services (doing
+          business as BUTS) ("we," "us," or "our"), describes how and why we
+          might access, collect, store, use, and/or share ("process") your
+          personal information when you use our services ("Services"), including
+          when you:
+        </p>
+
+        <ul>
+          <li>
+            Download and use our mobile application (Field Force), or any other
+            application of ours that links to this Privacy Notice
+          </li>
+          <li>
+            Engage with us in other related ways, including any marketing or
+            events
+          </li>
+        </ul>
+
+        <p>
+          Questions or concerns? Reading this Privacy Notice will help you
+          understand your privacy rights and choices. We are responsible for
+          making decisions about how your personal information is processed. If
+          you do not agree with our policies and practices, please do not use
+          our Services. If you still have any questions or concerns, please
+          contact us at butsit20@gmail.com.
+        </p>
+
+        <div class="section-heading">SUMMARY OF KEY POINTS</div>
+
+        <p>
+          This summary provides key points from our Privacy Notice, but you can
+          find out more details about any of these topics by clicking the link
+          following each key point or by using our table of contents below to
+          find the section you are looking for.
+        </p>
+
+        <p>
+          <strong>What personal information do we process?</strong> When you
+          visit, use, or navigate our Services, we may process personal
+          information depending on how you interact with us and the Services,
+          the choices you make, and the products and features you use. Learn
+          more about personal information you disclose to us.
+        </p>
+
+        <p>
+          <strong>Do we process any sensitive personal information?</strong>
+          Some of the information may be considered "special" or "sensitive" in
+          certain jurisdictions, for example your racial or ethnic origins,
+          sexual orientation, and religious beliefs. We do not process sensitive
+          personal information.
+        </p>
+
+        <p>
+          <strong>Do we collect any information from third parties?</strong> We
+          do not collect any information from third parties.
+        </p>
+
+        <p>
+          <strong>How do we process your information?</strong> We process your
+          information to provide, improve, and administer our Services,
+          communicate with you, for security and fraud prevention, and to comply
+          with law. We may also process your information for other purposes with
+          your consent. We process your information only when we have a valid
+          legal reason to do so. Learn more about how we process your
+          information.
+        </p>
+
+        <p>
+          <strong
+            >In what situations and with which parties do we share personal
+            information?</strong
+          >
+          We may share information in specific situations and with specific
+          third parties. Learn more about when and with whom we share your
+          personal information.
+        </p>
+
+        <p>
+          <strong>How do we keep your information safe?</strong> We have
+          adequate organizational and technical processes and procedures in
+          place to protect your personal information. However, no electronic
+          transmission over the internet or information storage technology can
+          be guaranteed to be 100% secure, so we cannot promise or guarantee
+          that hackers, cybercriminals, or other unauthorized third parties will
+          not be able to defeat our security and improperly collect, access,
+          steal, or modify your information. Learn more about how we keep your
+          information safe.
+        </p>
+
+        <p>
+          <strong>What are your rights?</strong> Depending on where you are
+          located geographically, the applicable privacy law may mean you have
+          certain rights regarding your personal information. Learn more about
+          your privacy rights.
+        </p>
+
+        <p>
+          <strong>How do you exercise your rights?</strong> The easiest way to
+          exercise your rights is by submitting a data subject access request,
+          or by contacting us. We will consider and act upon any request in
+          accordance with applicable data protection laws.
+        </p>
+
+        <p>
+          <strong
+            >Want to learn more about what we do with any information we
+            collect?</strong
+          >
+          Review the Privacy Notice in full.
+        </p>
+
+        <div class="section-gap"></div>
+
+        <div class="section-heading" id="sec1">1. WHAT INFORMATION DO WE COLLECT?</div>
+
+        <div class="sub-heading">Personal information you disclose to us</div>
+        <p>
+          <em
+            >In Short: We collect personal information that you provide to
+            us.</em
+          >
+        </p>
+        <p>
+          We collect personal information that you voluntarily provide to us
+          when you express an interest in obtaining information about us or our
+          products and Services, when you participate in activities on the
+          Services, or otherwise when you contact us.
+        </p>
+
+        <p>
+          <strong>Personal Information Provided by You.</strong> The personal
+          information that we collect depends on the context of your
+          interactions with us and the Services, the choices you make, and the
+          products and features you use. The personal information we collect may
+          include the following:
+        </p>
+        <ul>
+          <li>usernames</li>
+          <li>passwords</li>
+          <li>job titles</li>
+          <li>names</li>
+        </ul>
+
+        <p>
+          <strong>Sensitive Information.</strong> We do not process sensitive
+          information.
+        </p>
+
+        <p>
+          <strong>Application Data.</strong> If you use our application(s), we
+          also may collect the following information if you choose to provide us
+          with access or permission:
+        </p>
+        <ul>
+          <li>
+            <strong>Geolocation Information.</strong> We may request access or
+            permission to track location-based information from your mobile
+            device, either continuously or while you are using our mobile
+            application(s), to provide certain location-based services. If you
+            wish to change our access or permissions, you may do so in your
+            device's settings.
+          </li>
+          <li>
+            <strong>Mobile Device Data.</strong> We automatically collect device
+            information (such as your mobile device ID, model, and
+            manufacturer), operating system, version information and system
+            configuration information, device and application identification
+            numbers, browser type and version, hardware model Internet service
+            provider and/or mobile carrier, and Internet Protocol (IP) address
+            (or proxy server). If you are using our application(s), we may also
+            collect information about the phone network associated with your
+            mobile device, your mobile device’s operating system or platform,
+            the type of mobile device you use, your mobile device’s unique
+            device ID, and information about the features of our application(s)
+            you accessed.
+          </li>
+          <li>
+            <strong>Push Notifications.</strong> We may request to send you push
+            notifications regarding your account or certain features of the
+            application(s). If you wish to opt out from receiving these types of
+            communications, you may turn them off in your device's settings.
+          </li>
+        </ul>
+        <p>
+          This information is primarily needed to maintain the security and
+          operation of our application(s), for troubleshooting, and for our
+          internal analytics and reporting purposes.
+        </p>
+
+        <p>
+          All personal information that you provide to us must be true,
+          complete, and accurate, and you must notify us of any changes to such
+          personal information.
+        </p>
+
+        <div class="section-heading" id="sec2">
+          2. HOW DO WE PROCESS YOUR INFORMATION?
+        </div>
+        <p>
+          <em
+            >In Short: We process your information to provide, improve, and
+            administer our Services, communicate with you, for security and
+            fraud prevention, and to comply with law. We may also process your
+            information for other purposes with your consent.</em
+          >
+        </p>
+        <p>
+          We process your personal information for a variety of reasons,
+          depending on how you interact with our Services, including:
+        </p>
+        <ul>
+          <li>
+            <strong
+              >To respond to user inquiries/offer support to users.</strong
+            >
+            We may process your information to respond to your inquiries and
+            solve any potential issues you might have with the requested
+            service.
+          </li>
+          <li>
+            <strong>To protect our Services.</strong> We may process your
+            information as part of our efforts to keep our Services safe and
+            secure, including fraud monitoring and prevention.
+          </li>
+        </ul>
+
+        <div class="section-heading" id="sec3">
+          3. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
+        </div>
+        <p>
+          <em
+            >In Short: We may share information in specific situations described
+            in this section and/or with the following third parties.</em
+          >
+        </p>
+        <p>
+          We may need to share your personal information in the following
+          situations:
+        </p>
+        <ul>
+          <li>
+            <strong>Business Transfers.</strong> We may share or transfer your
+            information in connection with, or during negotiations of, any
+            merger, sale of company assets, financing, or acquisition of all or
+            a portion of our business to another company.
+          </li>
+          <li>
+            <strong>Affiliates.</strong> We may share your information with our
+            affiliates, in which case we will require those affiliates to honor
+            this Privacy Notice. Affiliates include our parent company and any
+            subsidiaries, joint venture partners, or other companies that we
+            control or that are under common control with us.
+          </li>
+        </ul>
+
+        <div class="section-heading" id="sec4">
+          4. HOW LONG DO WE KEEP YOUR INFORMATION?
+        </div>
+        <p>
+          <em
+            >In Short: We keep your information for as long as necessary to
+            fulfill the purposes outlined in this Privacy Notice unless
+            otherwise required by law.</em
+          >
+        </p>
+        <p>
+          We will only keep your personal information for as long as it is
+          necessary for the purposes set out in this Privacy Notice, unless a
+          longer retention period is required or permitted by law (such as tax,
+          accounting, or other legal requirements).
+        </p>
+        <p>
+          When we have no ongoing legitimate business need to process your
+          personal information, we will either delete or anonymize such
+          information, or, if this is not possible (for example, because your
+          personal information has been stored in backup archives), then we will
+          securely store your personal information and isolate it from any
+          further processing until deletion is possible.
+        </p>
+
+        <div class="section-heading" id="sec5">
+          5. HOW DO WE KEEP YOUR INFORMATION SAFE?
+        </div>
+        <p>
+          <em
+            >In Short: We aim to protect your personal information through a
+            system of organizational and technical security measures.</em
+          >
+        </p>
+        <p>
+          We have implemented appropriate and reasonable technical and
+          organizational security measures designed to protect the security of
+          any personal information we process. However, despite our safeguards
+          and efforts to secure your information, no electronic transmission
+          over the Internet or information storage technology can be guaranteed
+          to be 100% secure, so we cannot promise or guarantee that hackers,
+          cybercriminals, or other unauthorized third parties will not be able
+          to defeat our security and improperly collect, access, steal, or
+          modify your information. Although we will do our best to protect your
+          personal information, transmission of personal information to and from
+          our Services is at your own risk. You should only access the Services
+          within a secure environment.
+        </p>
+
+        <div class="section-heading" id="sec6">
+          6. DO WE COLLECT INFORMATION FROM MINORS?
+        </div>
+        <p>
+          <em
+            >In Short: We do not knowingly collect data from or market to
+            children under 18 years of age.</em
+          >
+        </p>
+        <p>
+          We do not knowingly collect, solicit data from, or market to children
+          under 18 years of age, nor do we knowingly sell such personal
+          information. By using the Services, you represent that you are at
+          least 18 or that you are the parent or guardian of such a minor and
+          consent to such minor dependent’s use of the Services. If we learn
+          that personal information from users less than 18 years of age has
+          been collected, we will deactivate the account and take reasonable
+          measures to promptly delete such data from our records. If you become
+          aware of any data we may have collected from children under age 18,
+          please contact us at ARK Fahad.
+        </p>
+
+        <div class="section-heading" id="sec7">7. WHAT ARE YOUR PRIVACY RIGHTS?</div>
+        <p>
+          <em
+            >In Short: You may review, change, or terminate your account at any
+            time, depending on your country, province, or state of
+            residence.</em
+          >
+        </p>
+        <p>
+          <strong>Withdrawing your consent:</strong> If we are relying on your
+          consent to process your personal information, which may be express
+          and/or implied consent depending on the applicable law, you have the
+          right to withdraw your consent at any time. You can withdraw your
+          consent at any time by contacting us by using the contact details
+          provided in the section "HOW CAN YOU CONTACT US ABOUT THIS NOTICE?"
+          below.
+        </p>
+        <p>
+          However, please note that this will not affect the lawfulness of the
+          processing before its withdrawal nor, when applicable law allows, will
+          it affect the processing of your personal information conducted in
+          reliance on lawful processing grounds other than consent.
+        </p>
+        <p>
+          If you have questions or comments about your privacy rights, you may
+          email us at butsit20@gmail.com.
+        </p>
+
+        <div class="section-heading" id="sec8">8. CONTROLS FOR DO-NOT-TRACK FEATURES</div>
+        <p>
+          Most web browsers and some mobile operating systems and mobile
+          applications include a Do-Not-Track ("DNT") feature or setting you can
+          activate to signal your privacy preference not to have data about your
+          online browsing activities monitored and collected. At this stage, no
+          uniform technology standard for recognizing and implementing DNT
+          signals has been finalized. As such, we do not currently respond to
+          DNT browser signals or any other mechanism that automatically
+          communicates your choice not to be tracked online. If a standard for
+          online tracking is adopted that we must follow in the future, we will
+          inform you about that practice in a revised version of this Privacy
+          Notice.
+        </p>
+
+        <div class="section-heading" id="sec9">9. DO WE MAKE UPDATES TO THIS NOTICE?</div>
+        <p>
+          <em
+            >In Short: Yes, we will update this notice as necessary to stay
+            compliant with relevant laws.</em
+          >
+        </p>
+        <p>
+          We may update this Privacy Notice from time to time. The updated
+          version will be indicated by an updated "Revised" date at the top of
+          this Privacy Notice. If we make material changes to this Privacy
+          Notice, we may notify you either by prominently posting a notice of
+          such changes or by directly sending you a notification. We encourage
+          you to review this Privacy Notice frequently to be informed of how we
+          are protecting your information.
+        </p>
+
+        <div class="section-heading" id="sec10">
+          10. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
+        </div>
+        <p>
+          If you have questions or comments about this notice, you may contact
+          our Data Protection Officer (DPO) by email at ARK Fahad, by phone at
+          01898766008, or contact us by post at:
+        </p>
+
+        <p>
+          Bangladesh Unique Technology Services<br />
+          Data Protection Officer<br />
+          Road 07<br />
+          Uttara<br />
+          Dhaka, 1230<br />
+          Bangladesh
+        </p>
+
+        <div class="section-heading" id="sec11">
+          11. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM
+          YOU?
+        </div>
+        <p>
+          Based on the applicable laws of your country, you may have the right
+          to request access to the personal information we collect from you,
+          details about how we have processed it, correct inaccuracies, or
+          delete your personal information. You may also have the right to
+          withdraw your consent to our processing of your personal information.
+          These rights may be limited in some circumstances by applicable law.
+          To request to review, update, or delete your personal information,
+          please fill out and submit a data subject access request.
+        </p>
+
+        <div class="section-gap"></div>
+      </main>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
+    <script>
+      // Scroll Progress Bar
+      window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('scrollProgress').style.width = scrolled + '%';
+        
+        // Back to top visibility
+        const backToTop = document.getElementById('backToTop');
+        if (winScroll > 300) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      });
+
+      // Smooth scroll back to top
+      document.getElementById('backToTop').addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+
+      // Active Table of Contents highlighting (Scroll Spy)
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -60% 0px',
+        threshold: 0
+      };
+
+      const headings = document.querySelectorAll('.section-heading');
+      const tocLinks = document.querySelectorAll('.toc-list li');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            tocLinks.forEach(link => {
+              const anchor = link.querySelector('a');
+              if (anchor && anchor.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+                link.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      headings.forEach(heading => {
+        if (heading.id) {
+          observer.observe(heading);
+        }
+      });
+    </script>
+  </body>
+</html>
